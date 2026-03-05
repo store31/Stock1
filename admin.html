@@ -1,0 +1,61 @@
+<!DOCTYPE html><html>
+<head><meta charset="UTF-8">
+<title>Admin</title><style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:white;
+padding:30px;
+width:300px;
+border-radius:10px;
+text-align:center;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+}
+
+button{
+width:100%;
+padding:10px;
+margin-top:15px;
+background:#2c3e50;
+color:white;
+border:none;
+}
+
+</style></head><body><div class="box"><h2>Admin Login</h2><input id="user" placeholder="Username"><input id="pass" type="password" placeholder="Password"><button onclick="login()">Login</button>
+
+<p id="msg"></p></div><script>
+
+function login(){
+
+var u=document.getElementById("user").value;
+var p=document.getElementById("pass").value;
+
+if(u=="admin" && p=="123456"){
+
+localStorage.setItem("admin","true");
+
+window.location="dashboard.html";
+
+}else{
+
+document.getElementById("msg").innerHTML="Wrong login";
+
+}
+
+}
+
+</script></body>
+</html>
